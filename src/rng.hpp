@@ -1,6 +1,6 @@
 /**
  * @file rng.hpp
- * @brief Contains utility functions for generating random numbers and other values.
+ * @brief Generating random numbers and other values.
  */
 
 #ifndef RAYTRACER_RNG_HPP

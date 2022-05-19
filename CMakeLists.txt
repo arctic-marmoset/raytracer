@@ -11,6 +11,18 @@ find_package(fmt CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(ZLIB REQUIRED)
 
+if(MSVC)
+    string(REGEX REPLACE "[-/]W[1-4]" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    set(RAYTRACER_WARN_FLAGS /W4 /permissive-)
+else()
+    set(RAYTRACER_WARN_FLAGS -Wall -Wextra -Wpedantic)
+endif()
+
+target_compile_options(raytracer
+    PRIVATE
+        ${RAYTRACER_WARN_FLAGS}
+)
+
 target_link_libraries(raytracer
     PRIVATE
         fmt::fmt-header-only

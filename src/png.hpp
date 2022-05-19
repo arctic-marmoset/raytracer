@@ -1,6 +1,6 @@
 /**
  * @file png.hpp
- * @brief Contains classes and functions to facilitate the writing of 32-bit PNG files.
+ * @brief Writing 32-bit true-color PNG files.
  */
 
 #ifndef RAYTRACER_PNG_HPP
@@ -224,7 +224,7 @@ namespace png
             return 0;
         }
 
-        void write_data(std::ostream &os) const
+        void write_data([[maybe_unused]] std::ostream &os) const
         {
         }
 
