@@ -95,6 +95,7 @@ namespace png
             os.put(static_cast<char>(interlace_method));
         }
 
+        [[nodiscard]]
         std::uint32_t hash_data(std::uint32_t crc) const
         {
             std::uint32_t width = this->width;
@@ -204,6 +205,7 @@ namespace png
             os.write(reinterpret_cast<const char *>(bytes.data()), bytes.size());
         }
 
+        [[nodiscard]]
         std::uint32_t hash_data(std::uint32_t crc) const
         {
             return crc32(crc, bytes.data(), static_cast<uInt>(bytes.size()));
@@ -228,6 +230,7 @@ namespace png
         {
         }
 
+        [[nodiscard]]
         std::uint32_t hash_data(std::uint32_t crc) const
         {
             return crc;
